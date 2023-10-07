@@ -1,0 +1,53 @@
+Tabel Pengguna (Users):
+
+id (Primary Key)
+nama
+email
+password_hash (untuk keamanan)
+role (misalnya: siswa, guru, admin, dll.)
+Tabel Produk (Products):
+
+id (Primary Key)
+nama_produk
+deskripsi_produk
+harga_produk
+Tabel Pesanan (Orders):
+
+id (Primary Key)
+user_id (Foreign Key ke Tabel Pengguna)
+tanggal_pesan
+status_pesanan (misalnya: sedang diproses, sudah dikirim, selesai)
+total_harga
+Tabel Detail Pesanan (OrderDetails):
+
+id (Primary Key)
+order_id (Foreign Key ke Tabel Pesanan)
+product_id (Foreign Key ke Tabel Produk)
+jumlah
+subtotal
+Tabel Menu Kantin (CafeteriaMenu):
+
+id (Primary Key)
+nama_menu
+deskripsi_menu
+harga_menu
+Tabel Stok Produk (ProductStock):
+
+id (Primary Key)
+product_id (Foreign Key ke Tabel Produk)
+jumlah_stok
+tanggal_update_stok
+Tabel Transaksi Pembayaran (PaymentTransactions):
+
+id (Primary Key)
+order_id (Foreign Key ke Tabel Pesanan)
+user_id (Foreign Key ke Tabel Pengguna)
+tanggal_transaksi
+metode_pembayaran (misalnya: kartu kredit, uang tunai, dompet digital)
+Tabel Review Produk (ProductReviews):
+
+id (Primary Key)
+product_id (Foreign Key ke Tabel Produk)
+user_id (Foreign Key ke Tabel Pengguna)
+rating (misalnya: 1 hingga 5)
+ulasan
